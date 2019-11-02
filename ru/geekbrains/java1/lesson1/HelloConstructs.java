@@ -10,11 +10,15 @@ public class HelloConstructs {
         int[] zeroAndOne = {0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0,};
         int[] arrSize8 = new int[8];
         int[] arrSize12 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        System.out.println("Задание 1");
         System.out.println(Arrays.toString(zeroAndOne));
-
         binarInverter(zeroAndOne); //task 1, invert 1 to 0 or 0 to 1
+        System.out.println("Задание 2");
         autoFill(arrSize8); // task2, auto fill arrays
+        System.out.println("Задание 3");
+        System.out.println(Arrays.toString(arrSize12));
         x2(arrSize12); //task3, if [i] < 6 then x2
+        
 
 
 
