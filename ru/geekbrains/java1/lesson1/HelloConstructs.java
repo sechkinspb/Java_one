@@ -18,12 +18,37 @@ public class HelloConstructs {
         System.out.println("Задание 3");
         System.out.println(Arrays.toString(arrSize12));
         x2(arrSize12); //task3, if [i] < 6 then x2
-        
+        System.out.println("Задание 4");
+        minInArr(arrSize8);
+        maxInArr(arrSize8);
 
 
 
 
 
+
+
+    }
+    public static void maxInArr(int [] nameArr){
+
+        int max = nameArr[0];
+        for ( int i = 0; i < nameArr.length; i++){
+            if(nameArr[i] > max){
+                max = nameArr[i];
+            }
+
+        }
+        System.out.println("Максимальное число массива "+ max);
+    }
+    public static void minInArr(int [] nameArr){
+        int min = nameArr[0];
+        for ( int i = 0; i < nameArr.length; i++){
+            if(nameArr[i] < min){
+                min = nameArr[i];
+            }
+
+        }
+        System.out.println("Минимальное число массива "+ min);
     }
     public static void x2(int[] nameArr){
         for (int i = 0; i < nameArr.length; i++){
