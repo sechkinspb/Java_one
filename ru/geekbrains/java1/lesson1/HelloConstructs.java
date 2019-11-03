@@ -10,6 +10,7 @@ public class HelloConstructs {
         int[] zeroAndOne = {0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0,};
         int[] arrSize8 = new int[8];
         int[] arrSize12 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        int[][] arrSquare = new int[10][10];
         System.out.println("Задание 1");
         System.out.println(Arrays.toString(zeroAndOne));
         binarInverter(zeroAndOne); //task 1, invert 1 to 0 or 0 to 1
@@ -21,6 +22,8 @@ public class HelloConstructs {
         System.out.println("Задание 4");
         minInArr(arrSize8);
         maxInArr(arrSize8);
+        System.out.println("Задание 5");
+        autoFillSquare(arrSquare);
 
 
 
@@ -28,6 +31,23 @@ public class HelloConstructs {
 
 
 
+
+
+
+    }
+    public static void autoFillSquare(int[][] nameArr){
+        for (int i = 0; i < nameArr.length; i++){
+            for(int j = 0; j < nameArr[i].length; j++){
+                if( i == j ){
+                    nameArr[i][j] = 1;
+                }
+                if(i + 1 == nameArr.length - j){   // +1    т.к нумерация массива с 0, а не с 1.
+                    nameArr[i][j] = 1;
+                }
+            }
+            System.out.println(Arrays.toString(nameArr[i]));
+
+        }
     }
     public static void maxInArr(int [] nameArr){
 
