@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 public class HelloConstructs {
     public static void main(String[] args){
+        int[] testBalance = {5,5,5,5,5,5,5,5};
         int[] zeroAndOne = {0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0,};
         int[] arrSize8 = new int[8];
         int[] arrSize12 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
@@ -24,6 +25,8 @@ public class HelloConstructs {
         maxInArr(arrSize8);
         System.out.println("Задание 5");
         autoFillSquare(arrSquare);
+        System.out.println("Задание 6");
+        System.out.println(checkBalance(testBalance));
 
 
 
@@ -33,6 +36,23 @@ public class HelloConstructs {
 
 
 
+
+    }
+
+    public static boolean checkBalance(int[] nameArr){
+        int amountArr = 0;
+        int halfAmount = 0;
+        for(int i = 0; i < nameArr.length; i++){
+            amountArr = amountArr + nameArr[i];
+
+        }
+        if(amountArr % 2 == 0){
+            for(int i = 0; halfAmount != (amountArr / 2); i++){
+                halfAmount = halfAmount + nameArr[i];
+            }
+        }
+
+        return halfAmount == (amountArr / 2);
 
     }
     public static void autoFillSquare(int[][] nameArr){
