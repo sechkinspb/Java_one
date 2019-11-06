@@ -1,5 +1,6 @@
 package ru.geekbrains.java1.lesson1;
 
+import com.sun.jmx.snmp.internal.SnmpAccessControlModel;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.lang.reflect.Array;
@@ -21,12 +22,16 @@ public class HelloConstructs {
         System.out.println(Arrays.toString(arrSize12));
         x2(arrSize12); //task3, if [i] < 6 then x2
         System.out.println("Задание 4");
-        minInArr(arrSize8);
+        minInArr(arrSize8); //k//k;;;;;
         maxInArr(arrSize8);
         System.out.println("Задание 5");
         autoFillSquare(arrSquare);
         System.out.println("Задание 6");
         System.out.println(checkBalance(testBalance));
+        System.out.println("Задание 7");
+        System.out.println(Arrays.toString(arrSize8));
+        bias(arrSize8, -1);
+        //bias1(arrSize8, 1);
 
 
 
@@ -37,6 +42,43 @@ public class HelloConstructs {
 
 
 
+
+    }
+
+//    public static void bias1(int[] nameArr, int bias){
+//        int temporary1 = 0;
+//        for ( int i = 0; i < nameArr.length; i++){
+//            for (int j = 0; j < bias; j++){
+//                if(i + j <= nameArr.length){
+//                    temporary1 = nameArr[i];
+//                    nameArr[i] = nameArr[i + 1];
+//                    nameArr[i + 1] = temporary1;
+//                }
+//                if(i + j > nameArr.length){
+//                    temporary1 = nameArr[i];
+//                    nameArr[i] = nameArr[i + 1 - nameArr.length];
+//                    nameArr[i + 1 - nameArr.length] = temporary1;
+//                }
+//            }
+//        }
+//    }
+
+    public static void bias(int [] nameArr, int bias){
+        int[] temporary = new int[nameArr.length];
+        for(int i = 0; i < nameArr.length; i++){
+            if(bias >=0){
+                if(i + bias < nameArr.length){
+                    temporary[i + bias] = nameArr[i];
+                }
+                if(i + bias >= nameArr.length){
+                    temporary[i + bias - nameArr.length] = nameArr[i];
+                }
+            }
+            if(bias < 0){
+                temporary[i + bias + nameArr.length] = nameArr[i];
+            }
+        }
+        System.out.println(Arrays.toString(temporary));
     }
 
     public static boolean checkBalance(int[] nameArr){
