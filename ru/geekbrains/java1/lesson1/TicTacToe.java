@@ -59,19 +59,27 @@ public class TicTacToe {
         } while (!isEmptyCell(x, y));
         field[y][x] = DOT_AI;
     }
-    private static boolean checkWin(char c) {
-        if (field[0][0] == c && field[0][1] == c && field[0][2] == c) return true;
-        if (field[1][0] == c && field[1][1] == c && field[1][2] == c) return true;
-        if (field[2][0] == c && field[2][1] == c && field[2][2] == c) return true;
-
-        if (field[0][0] == c && field[1][0] == c && field[2][0] == c) return true;
-        if (field[0][1] == c && field[1][1] == c && field[2][1] == c) return true;
-        if (field[0][2] == c && field[1][2] == c && field[2][2] == c) return true;
-
-        if (field[0][0] == c && field[1][1] == c && field[2][2] == c) return true;
-        if (field[0][2] == c && field[1][1] == c && field[2][0] == c) return true;
-        return false;
+    private static boolean checkWin(char c){
+        for(int i = 0; i < fieldSizeY; i++) {
+            if (field[i][0] == c && field[0][1] == c && field[0][2] == c) return true;
+            if (field[0][i] == c && field[1][i] == c && field[2][i] == c) return true;
+        }
+        //for(int
+     return false;
     }
+//    private static boolean checkWin(char c) {
+//        if (field[0][0] == c && field[0][1] == c && field[0][2] == c) return true;
+//        if (field[1][0] == c && field[1][1] == c && field[1][2] == c) return true;
+//        if (field[2][0] == c && field[2][1] == c && field[2][2] == c) return true;
+//
+//        if (field[0][0] == c && field[1][0] == c && field[2][0] == c) return true;
+//        if (field[0][1] == c && field[1][1] == c && field[2][1] == c) return true;
+//        if (field[0][2] == c && field[1][2] == c && field[2][2] == c) return true;
+//
+//        if (field[0][0] == c && field[1][1] == c && field[2][2] == c) return true;
+//        if (field[0][2] == c && field[1][1] == c && field[2][0] == c) return true;
+//        return false;
+//    }
     private static boolean isDraw() {
         for (int i = 0; i < fieldSizeY; i++) {
             for (int j = 0; j < fieldSizeX; j++) {
