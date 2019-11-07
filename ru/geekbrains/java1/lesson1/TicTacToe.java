@@ -60,11 +60,30 @@ public class TicTacToe {
         field[y][x] = DOT_AI;
     }
     private static boolean checkWin(char c){
-        for(int i = 0; i < fieldSizeY; i++) {
-            if (field[i][0] == c && field[0][1] == c && field[0][2] == c) return true;
-            if (field[0][i] == c && field[1][i] == c && field[2][i] == c) return true;
+        int checksum = fieldSizeX;
+        int check1 = 0;
+        int check2 = 0;
+        for(int i = 0; i < fieldSizeY; i++) {                                               // <<< this is bad =(
+            if (field[i][0] == c && field[0][1] == c && field[0][2] == c) return true;      //
+            if (field[0][i] == c && field[1][i] == c && field[2][i] == c) return true;      //
+        }                                                                                   //
+        for (int k = 0; k < fieldSizeY; k++){
+            for(int j = 0; j < fieldSizeX; j++){
+                if( k == j && field[k][j] == c ){
+                    check1 = check1 + 1;
+                }
+                if(k + 1 == fieldSizeX - j && field[k][j] == c){
+                    check2 = check2 + 1;
+                }
+            }
+            System.out.println(checksum);
+            System.out.println(check1);
+            System.out.println(check2);
+
         }
-        //for(int
+        if(check1 == checksum || check2 == checksum){
+            return true;
+        }
      return false;
     }
 //    private static boolean checkWin(char c) {
