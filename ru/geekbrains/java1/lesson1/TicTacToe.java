@@ -76,9 +76,6 @@ public class TicTacToe {
                     check2 = check2 + 1;
                 }
             }
-            System.out.println(checksum);
-            System.out.println(check1);
-            System.out.println(check2);
 
         }
         if(check1 == checksum || check2 == checksum){
