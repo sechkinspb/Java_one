@@ -21,7 +21,7 @@ public class Main {
             }
             else System.out.println(arr[i].name + "  не прыгнул");
 
-            
+
 
         }
     }
